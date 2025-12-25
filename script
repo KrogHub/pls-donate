@@ -449,7 +449,7 @@ local function serverHop()
                     local servers = {}
 
                     for _, server in pairs(body.data) do
-                        if server.playing < 25 and server.id ~= JobId and server.playing > 12 then
+                        if server.playing > 22 and server.id ~= JobId and server.playing < 28 then
                             table.insert(servers, server)
                         end
                     end
@@ -740,7 +740,7 @@ local function checkForBots()
 			end
 		end
 	end
-	if flaggedTextCount > 6 then
+	if flaggedTextCount > 30 then
 		serverHop()
 	end
 end
